@@ -96,10 +96,12 @@ public class JwtUtil {
      * 为指定用户生成 Token
      *
      * @param username 用户名
+     * @param userId   用户ID
      * @return JWT
      */
-    public String generateToken(String username) {
+    public String generateToken(String username, Long userId) {
         Map<String, Object> claims = new HashMap<>();
+        claims.put("userId", userId);
         return createToken(claims, username);
     }
 

@@ -44,6 +44,9 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>3.2.1</version>
+                <configuration>
+                    <mainClass>com.atra.ticketservice.TicketServiceApplication</mainClass>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>

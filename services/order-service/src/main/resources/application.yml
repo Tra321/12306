@@ -3,8 +3,26 @@ spring:
   # 应用名称，将用于服务发现
   application:
     name: order-service
+  # 数据库数据源配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/12306-order?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Mysql135!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # JPA 配置
+  jpa:
+    hibernate:
+      ddl-auto: none # 不让 Hibernate 自动创建表，我们使用 SQL 文件
+    show-sql: true # 在控制台打印执行的 SQL 语句，方便调试
 
 # 服务器相关配置
 server:
   # 应用监听的端口号
   port: 8003
+
+# JWT 相关配置
+jwt:
+  # 用于签名 JWT 的密钥，必须与 user-service 中的密钥保持一致
+  secret: "bXktc2VjcmV0LWtleS1mb3ItMTIzMDYtcHJvamVjdC1hdXRoZW50aWNhdGlvbg=="
+  # JWT 的过期时间（单位：毫秒），这里设置为 1 小时
+  expiration: 3600000
