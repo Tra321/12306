@@ -1,0 +1,32 @@
+# Spring Boot 应用配置
+spring:
+  # 应用名称，将用于服务发现
+  application:
+    name: ticket-service
+  # Spring Data Source 配置
+  datasource:
+    # 数据库驱动类名
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库连接 URL，请将 12306-ticket 替换为您的数据库名
+    url: jdbc:mysql://127.0.0.1:3306/12306-ticket?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    # 数据库用户名，请替换
+    username: root
+    # 数据库密码，请替换
+    password: Mysql135!
+  # JPA 配置
+  jpa:
+    # 关闭 Open Session In View 模式
+    open-in-view: false
+    # 在启动时根据实体类自动更新表结构
+    hibernate:
+      ddl-auto: update
+    # 在日志中显示执行的 SQL 语句
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# 服务器相关配置
+server:
+  # 应用监听的端口号
+  port: 8002

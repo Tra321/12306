@@ -1,0 +1,40 @@
+# Spring Boot 应用配置
+spring:
+  # 应用名称，将用于服务发现
+  application:
+    name: user-service
+  # Spring Data Source 配置
+  datasource:
+    # 数据库驱动类名
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库连接 URL，请将 12306-user 替换为您的数据库名
+    url: jdbc:mysql://127.0.0.1:3306/12306-user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    # 数据库用户名，请替换
+    username: root
+    # 数据库密码，请替换
+    password: Mysql135!
+  # JPA 配置
+  jpa:
+    # 关闭 Open Session In View 模式，可提高性能，并避免在视图渲染时查询数据库
+    open-in-view: false
+    # 在启动时根据实体类自动更新表结构 (none, validate, update, create, create-drop)
+    hibernate:
+      ddl-auto: update
+    # 在日志中显示执行的 SQL 语句
+    show-sql: true
+    # 格式化显示的 SQL
+    properties:
+      hibernate:
+        format_sql: true
+
+# 服务器相关配置
+server:
+  # 应用监听的端口号
+  port: 8001
+
+# JWT 相关配置
+jwt:
+  # 用于签名 JWT 的密钥，请在生产环境中替换为一个更长、更复杂的随机字符串
+  secret: "bXktc2VjcmV0LWtleS1mb3ItMTIzMDYtcHJvamVjdC1hdXRoZW50aWNhdGlvbg=="
+  # JWT 的过期时间（单位：毫秒），这里设置为 1 小时
+  expiration: 3600000

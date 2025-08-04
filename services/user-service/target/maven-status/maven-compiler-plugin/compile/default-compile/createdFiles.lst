@@ -1,0 +1,12 @@
+com\atra\userservice\config\SecurityConfig.class
+com\atra\userservice\domain\entity\User.class
+com\atra\userservice\service\UserService.class
+com\atra\userservice\dao\UserRepository.class
+com\atra\userservice\UserServiceApplication.class
+com\atra\userservice\service\impl\UserServiceImpl.class
+com\atra\userservice\controller\UserController.class
+com\atra\userservice\advice\GlobalExceptionHandler.class
+com\atra\userservice\filter\JwtAuthenticationFilter.class
+com\atra\userservice\dto\UserDTO.class
+com\atra\userservice\dto\UserLoginDTO.class
+com\atra\userservice\util\JwtUtil.class

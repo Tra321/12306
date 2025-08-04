@@ -1,0 +1,10 @@
+# Spring Boot 应用配置
+spring:
+  # 应用名称，将用于服务发现
+  application:
+    name: payment-service
+
+# 服务器相关配置
+server:
+  # 应用监听的端口号
+  port: 8004
